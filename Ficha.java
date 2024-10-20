@@ -25,17 +25,12 @@ public class Ficha
     public boolean esMula(){
         return ladoA == ladoB;
     }
-    //VERIFICA SI ES COLOCABLE EN UNO DE LOS EXTREMOS DEL TABLERO
-    public boolean esCompatible(int extremoIzquierdo, int extremoDerecho){
-        return(ladoA == extremoIzquierdo || ladoB == extremoIzquierdo ||
-        ladoA == extremoDerecho || ladoB == extremoDerecho);
-    }
     //IMPRIME LA FICHA
     @Override
     public String toString(){
-        return ("[ "+ladoA+" | "+ladoB+" ]");
+        return "[" + ladoA + "|" + ladoB + "]";
     }
-    //GETTERS Y SETTERS
+    //GETTERS Y GETTERS
     public int getLadoA(){
         return ladoA;
     }
