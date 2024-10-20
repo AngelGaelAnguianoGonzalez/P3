@@ -9,13 +9,16 @@ import java.util.*;
 public class Pozo
 {
     private ArrayList<Ficha> fichas;
+
     public Pozo(){
         fichas = new ArrayList<>();
     }
+
     //VERIFICA SI HAY FICHAS DISPONIBLES EN EL POZO.
     public boolean verificarPozo(){
         return fichas.isEmpty();
     }
+
     //ROBA UNA FICHA DEL POZO.
     public Ficha tomarFichaDelPozo(){
         if(!verificarPozo()){
@@ -24,12 +27,21 @@ public class Pozo
         System.out.println("EL POSO ESTÁ VACIO");
         return null;
     }
-    //MUESTRA LAS FICHAS QUE ESTAN EN EL POZO.
-    public void mostrarPozo(){
-        System.out.println(fichas.toString());
-    }
+
     //ESTE METODO RECIBE LAS FICHAS DE DOMINO QUE SOBRARON
-    public void agregarFichasAlPozo(ArrayList<Ficha> fichasGuardadasEnPozo){
-        fichas.addAll(fichasGuardadasEnPozo);
+    public void agregarFichaAlPozo(Ficha ficha) {
+        fichas.add(ficha);
+    }
+
+    //MUESTRA LAS FICHAS QUE ESTAN EN EL POZO.
+    public void mostrarFichasDelPozo() {
+        if (fichas.isEmpty()) {
+            System.out.println("NO HAY FICHAS EN EL POZO.");
+        } else {
+            System.out.println("FICHAS EN POZO:");
+            for (Ficha ficha : fichas) {
+                System.out.println(ficha);  
+            }
+        }
     }
 }
